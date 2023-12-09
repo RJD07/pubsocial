@@ -36,7 +36,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     return res.status(200).json(post);
   } catch (error) {
-    console.error('Error in /api/posts/[postId]:', error);
+    console.error('Error in fuckyou:', error);
     return res.status(400).end();
   }
 }
