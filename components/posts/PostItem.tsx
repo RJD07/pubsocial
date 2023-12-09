@@ -60,6 +60,10 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
         p-5 
         cursor-pointer 
         transition
+        xs:w-11/12
+        xs:ml-3
+        sm:w-full
+        sm:ml-0
       ">
       <div className="flex flex-row items-start gap-3">
         <Avatar userId={data.user.id} />

@@ -18,13 +18,15 @@ const SidebarLogo = () => {
         hover:bg-blue-300 
         hover:bg-opacity-10 
         cursor-pointer
+        xs:ml-3
+        sm:ml-3
+        md:ml-0
     "
     >
       <Image
         src="/logo.png"
         width={800}
         height={800}
-        alt="Picture of the author"
       />{" "}
     </div>
   );

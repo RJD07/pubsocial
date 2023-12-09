@@ -38,8 +38,8 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ label, icon: Icon, href, auth
       <div className="
         relative
         rounded-full 
-        h-14
-        w-14
+        h-26
+        w-26
         flex
         items-center
         justify-center 
@@ -47,7 +47,8 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ label, icon: Icon, href, auth
         hover:bg-lBlue
         hover:bg-opacity-10 
         cursor-pointer 
-        lg:hidden
+        md:hidden
+        ml-5
       ">
         <Icon size={28} color="#557A95" />
         {alert ? <BsDot className="text-white absolute -top-4 left-0" size={70} /> : null}
@@ -55,7 +56,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ label, icon: Icon, href, auth
       <div className="
         relative
         hidden 
-        lg:flex 
+        md:flex 
         items-row 
         gap-4 
         p-4 
@@ -66,7 +67,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ label, icon: Icon, href, auth
         items-center
       ">
         <Icon size={24} color="#557A95" />
-        <p className="hidden lg:block  text-dark hover:text-blue text-xl">
+        <p className="hidden md:block  text-dark hover:text-blue text-xl">
           {label}
         </p>
         {alert ? <BsDot className="text-white  absolute -top-4 left-0" size={70} /> : null}

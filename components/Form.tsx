@@ -48,7 +48,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
   }, [body, mutatePosts, isComment, postId, mutatePost]);
 
   return (
-    <div className="border-b-[1px] border-dark px-5 py-2">
+    <div className="border-b-[1px] border-dark px-5 py-2 xs:w-11/12 sm:w-full xs:ml-3 sm:ml-0">
       {currentUser ? (
         <div className="flex flex-row gap-4">
           <div>
@@ -64,7 +64,8 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
                 peer
                 resize-none 
                 mt-3 
-                w-full 
+                w-full
+                h-10
                 bg-brown
                 ring-0 
                 outline-none 
@@ -80,8 +81,9 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
                 peer-focus:opacity-100 
                 h-[1px] 
                 w-full 
-                border-dark
-                transition"
+                border-blue
+                transition
+                xs:w-11/12"
             />
             <div className="mt-4 flex flex-row justify-end">
               <Button disabled={isLoading || !body} onClick={onSubmit} label="Pub" />

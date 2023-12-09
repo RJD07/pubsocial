@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { FaFeather } from "react-icons/fa";
+import { IoIosSend } from "react-icons/io";
 import { useRouter } from "next/router";
 
 import useLoginModal from "@/hooks/useLoginModal";
@@ -22,10 +22,10 @@ const SidebarTweetButton = () => {
     <div onClick={onClick}>
       <div className="
         mt-6
-        lg:hidden 
+        md:hidden 
         rounded-full 
-        h-14
-        w-14
+        h-24
+        w-24
         p-4
         flex
         items-center
@@ -34,13 +34,14 @@ const SidebarTweetButton = () => {
         hover:bg-opacity-80 
         transition 
         cursor-pointer
-      ">
-        <FaFeather size={24} color="#557A95" />
+        pl-10
+      "><span className="mr-5 mb-20 mt-5">
+        <IoIosSend size={34} color="#557A95"  /></span>
       </div>
       <div className="
         mt-6
         hidden 
-        lg:block 
+        md:block 
         px-4
         py-2.5
         rounded-full
@@ -51,7 +52,7 @@ const SidebarTweetButton = () => {
         <p 
           className="
             hidden 
-            lg:block 
+            md:block 
             text-center
             font-semibold
             text-brown
