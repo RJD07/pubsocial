@@ -1,14 +1,16 @@
 import { NextApiRequest, NextApiResponse } from "next";
+
 import serverAuth from "@/libs/serverAuth";
 import prisma from "@/libs/prismadb";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  try {
-    console.log(`Received ${req.method} request to /api/posts`);
+  if (req.method !== 'POST' && req.method !== 'GET') {
+    return res.status(405).end();
+  }
 
+  try {
+    
     if (req.method === 'POST') {
-      console.log('Handling POST request');
-      
       const { currentUser } = await serverAuth(req, res);
       const { body } = req.body;
 
@@ -19,16 +21,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
       });
 
-      console.log('Post created:', post);
       return res.status(200).json(post);
     }
 
     if (req.method === 'GET') {
-      console.log('Handling GET request');
-      
       const { userId } = req.query;
 
-      console.log('User ID:', userId);
+      console.log({ userId })
 
       let posts;
 
@@ -57,11 +56,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         });
       }
 
-      console.log('Fetched posts:', posts);
       return res.status(200).json(posts);
     }
   } catch (error) {
-    console.error('Error in /api/posts:', error);
+    console.log(error);
     return res.status(400).end();
   }
 }
