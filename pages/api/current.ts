@@ -8,9 +8,9 @@ const handleGetRequest = async (req: NextApiRequest, res: NextApiResponse) => {
     console.log('Authentication successful:', currentUser);
 
     return res.status(200).json(currentUser);
-  } catch (error) {
+  } catch (error: any) { // or catch (error: Error)
     console.error('Error in /api/current:', error);
-    return res.status(400).json({ error: error.message || 'An error occurred' });
+    return res.status(400).json({ error: (error as Error).message || 'An error occurred' });
   }
 };
 
